@@ -1,25 +1,20 @@
-import React, { lazy, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Layout, Menu, ConfigProvider } from 'antd'; // Import các component Antd
 import 'antd/dist/reset.css'; // Import CSS reset của Antd v5
-
+import ProductPage from '@my-monorepo/product';
 const { Header, Content, Footer } = Layout;
-
-const ProductPage = lazy(() => import('../../product/src/main'));
 
 const items = [
   { key: '/', label: <Link to="/">Home (JS Page)</Link> },
   { key: '/products', label: <Link to="/products">Products (TS Page)</Link> },
-  // Thêm các menu item khác
 ];
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
       <ConfigProvider>
-        {' '}
-        {/* Bao bọc ứng dụng bằng ConfigProvider */}
         <Layout style={{ minHeight: '100vh' }}>
           <Header style={{ display: 'flex', alignItems: 'center' }}>
             <div

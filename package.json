@@ -13,7 +13,8 @@
     "build:components": "pnpm --filter base-ui-components build",
     "lint": "pnpm --recursive lint",
     "clean": "pnpm --recursive exec rm -rf dist node_modules",
-    "install:all": "pnpm install"
+    "install:all": "pnpm install",
+    "preview": "pnpm --filter main-app preview"
   },
   "keywords": [],
   "author": "",
